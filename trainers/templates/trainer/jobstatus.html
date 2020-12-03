@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'trainer/base.html' %}
+{% block body_block %}
+
+<h2>Job Status</h2>
+{% if jobs %}
+<div class="container">
+    <div class="row">
+        {% for job in jobs  %}
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+
+    <h5 class="card-title">{{job.status}}</h5>
+      {{job.jobtitle}}
+
+
+  </div>
+</div>
+
+
+<hr>
+{% endfor %}
+        {%else%}
+        <h3>No active notifications</h3>
+        {% endif %}
+    </div>
+</div>
+{%endblock%}

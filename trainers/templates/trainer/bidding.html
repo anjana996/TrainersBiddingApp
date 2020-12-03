@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'trainer/base.html' %}
+{% block body_block %}
+
+<div class="container">
+    <h5>Please enter your expected amount/hr</h5>
+    <div class="row">
+        <div class="col-6">
+            <form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+
+                <input type="submit" value="Apply">
+
+
+
+</form>
+
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}

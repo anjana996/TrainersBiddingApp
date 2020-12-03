@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'trainer/base.html' %}
+{% block body_block %}
+
+<div class="container"></div>
+<div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            {% for job in jobs %}
+                <div class="card ">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>{{ job.user }}</b></h5>
+                        <p class="card-text">job title : {{ job.jobtitle }}</p>
+                        <p class="card-text">skills : {{ job.skills }}</p>
+                        <p class="card-text">status : {{ job.status }}</p>
+
+                    </div>
+                </div><br>
+            {% endfor %}
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+{%endblock%}

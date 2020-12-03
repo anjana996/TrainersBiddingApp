@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'insti/base.html' %}
+{% block body_block %}
+<h2>{{jobs.job_title}}</h2>
+Skills:{{jobs.skills}}<br>
+qualification:{{jobs.qualifications}}<br>
+*Freshers with good programming knowledge can apply<br>
+<button> </button>
+<a href="{% url 'joblist' %}" class="btn btn-primary">previous</a>
+<a href="{% url 'adminhome' %}" class="btn btn-primary">home</a>
+
+{% endblock %}

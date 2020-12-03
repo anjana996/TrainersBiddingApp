@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'trainer/base.html' %}
+{% block body_block %}
+
+Do you want to submit/edit your details?<br>
+<a href="{% url 'sentapp'%}" class="btn btn-success">Submit</a>
+<a href="{% url 'editd' %}" class="btn btn-warning">Edit details</a>
+
+{%endblock%}

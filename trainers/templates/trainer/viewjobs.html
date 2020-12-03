@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+{% extends 'trainer/base.html' %}
+
+{% block body_block %}
+{% if jobs%}
+{% for job in jobs%}
+<h2>job title:{{job.job_title}}</h2>
+skills:{{job.skills}}<br>
+qualification:{{job.qualifications}}<br>
+
+<a href="{% url 'bidding' %}" class="btn btn-success">ApplyNow</a>
+
+{% endfor %}
+{% else %}
+No active jobs
+{% endif%}
+{%endblock%}

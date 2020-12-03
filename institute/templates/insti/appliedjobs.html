@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'insti/base.html' %}
+{% block body_block %}
+{% if jobs%}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+
+    </div>
+<!--        <div class="col-6">-->
+<!--            <div class="dropdown">-->
+<!--  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--    Filter-->
+<!--  </a>-->
+
+<!--  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+<!--    <a class="dropdown-item" href="{% url 'searchdjango'%}">Django</a>-->
+<!--    <a class="dropdown-item" href="{% url 'bigdata'%}">bigdata</a>-->
+<!--          <a class="dropdown-item" href="{% url 'meanstack'%}">meanstack</a>-->
+
+<!--          <a class="dropdown-item" href="{% url 'php'%}">php</a>-->
+<!--          <a class="dropdown-item" href="{% url 'python'%}">python</a>-->
+
+
+<!--  </div>-->
+<div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            {% for job in jobs %}
+                <div class="card ">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>{{ job.user }}</b></h5>
+                        <p class="card-text">job title : {{ job.jobtitle }}</p>
+                        <p class="card-text">skills : {{ job.skills }}</p>
+                        <p class="card-text">status : {{ job.status }}</p>
+
+
+
+                        <a href="{% url 'jobdetails' job.id %}" class="btn btn-primary">View Application</a>
+                    </div>
+                </div><br>
+                    </div>
+
+            {% endfor %}
+              {%else%}
+    No active applicants
+    {%endif%}
+<div class="col-4"></div>
+</div>
+
+
+    </div>
+{%endblock%}
